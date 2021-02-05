@@ -981,6 +981,11 @@
         if (_belongsTo(element, self.target)) {
             return false;
         }
+        
+        // if body has the class "mousetrap-all" then no need to stop
+        if (document.body.classList.contains('mousetrap-all')) {
+            return false;
+        }
 
         // Events originating from a shadow DOM are re-targetted and `e.target` is the shadow host,
         // not the initial event target in the shadow tree. Note that not all events cross the
